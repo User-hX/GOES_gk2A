@@ -6,7 +6,8 @@
 - **Left column:**
   - *Next image downlink:* countdown to the next UTC-aligned slot, with `every 10 min · next HH:MM` on one line. Turns amber in the last 30 s.
   - *Session:* LOCKS (acquisitions since the page opened), THIS LOCK and BEST LOCK in seconds, and IMAGES (all image files in the output folder).
-  - *Settings:* centre frequency, span and interval are read-only and come from the bridge. SNR threshold and averaging time are editable. AIM TONE plays a pitch that rises with SNR and a chime on lock.
+  - *Settings:* centre frequency, span and interval are read-only and come from the bridge. SNR threshold and averaging time are editable.
+  - *AIM TONE:* plays a pitch that rises with SNR and a chime on lock.
   - *Event log:* lock events, stage changes, setup, new and cleared images.
 - **Centre:** the decoded image with a CLEAR button.
 - **Right column:** *Signal* (stage banner, peak and smoothed SNR, 60 s history), *Spectrum* (live FFT with peak frequency and offset) and *Link* (Δf, BER, RS ERR, C/N).
@@ -16,7 +17,7 @@
 
 On every poll (0.25 s by default) the dashboard applies an exponential moving average to the raw SNR, with the averaging time (default 1 s) as its time constant. With an averaging time above 1 s it also takes the median of the last 3 readings first, to remove single-reading spikes. A larger value is steadier but slower: a step change is about 63 percent reflected after one averaging time. Set it to 0.1 to 0.5 for a near-raw display.
 
-The smoothed SNR drives the big SNR number, the history graph, the aim tone pitch, the SIGNAL FOUND stage, the SNR and BPSK colours, and the lock decision only when SatDump reports no lock stats. It does not affect raw SNR, peak SNR, Δf, BER, RS, C/N or the lock flags, which are instantaneous. The spectrum has its own light, fixed smoothing, and its peak-hold line falls at a fixed rate in dB per second.
+The smoothed SNR drives the big SNR number, the history graph, the aim tone pitch, the SIGNAL FOUND stage, the SNR and BPSK status indication colours, and the lock decision only when SatDump reports no lock stats. It does not affect raw SNR, peak SNR, Δf, BER, RS, C/N or the lock flags, which are instantaneous. The spectrum has its own light, fixed smoothing, and its peak-hold line falls at a fixed rate in dB per second.
 
 The SNR threshold normally does not decide lock, because SatDump reports its own lock flags. It sets the dashed line on the graph and the green boundary for SNR and peak SNR.
 
@@ -62,6 +63,6 @@ Reed-Solomon is gated on frame sync because SatDump reports `0.0` errors before 
 ## What the link metrics mean
 
 - **Δf:** the demodulator's frequency offset in Hz. Only meaningful when a signal is present, otherwise it just wanders.
-- **BER:** bit error rate seen by the Viterbi decoder. Noise gives about 0.5, a good lock gives a small number.
+- **BER:** bit error rate seen by the Viterbi decoder. Noise gives about 0.5, a good lock gives a small number <0.01.
 - **RS ERR:** Reed-Solomon fixes damaged bytes. Each codeword can fix up to 16 bad bytes and LRIT uses 4 in parallel. The tile shows the average bytes fixed per codeword, so lower is better. FAIL means a codeword could not be repaired, so that data is lost and the image gets gaps.
 - **C/N:** the dashboard's own rough estimate, the strongest spectrum peak above the median noise floor in dB. It is not SatDump's SNR and is not calibrated, so compare it only with itself. It needs FFT data, and a thin spike such as SDR centre leakage can inflate it. A real signal should appear as a broad bump above the noise, not a single thin line.
