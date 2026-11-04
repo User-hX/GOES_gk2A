@@ -76,36 +76,12 @@ To stop, press Ctrl-C for the bridge and close SatDump. The frequency cannot be 
 - [docs/DASHBOARD.md](docs/DASHBOARD.md): panels, colour rules, image behaviour, what each metric means.
 - [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md): common errors and fixes.
 
-## Repository layout
-
-```
-gk2a-signal-console/
-├── README.md
-├── LICENSE
-├── CHANGELOG.md
-├── .gitignore
-├── gk2a_bridge.py        local server linking SatDump and the dashboard
-├── gk2a_live.html        the dashboard (single file)
-└── docs/
-    ├── SETUP.md
-    ├── CONFIGURATION.md
-    ├── DASHBOARD.md
-    ├── TROUBLESHOOTING.md
-    ├── preview-locked.png
-    └── preview-searching.png
-```
-
 ## Status and limitations
 
-- Built around SatDump v1.2.2's stats API. The dashboard reads the fields `snr`, `peak_snr`, `freq`, `viterbi_ber`, `viterbi_lock`, `deframer_lock`, `rs_avg` and `fft_values`. If one is missing, its stage shows grey and the banner falls back to your SNR threshold.
-- Tested with simulated SatDump stats and in a headless browser. Behaviour on a live GK-2A lock has not been fully verified.
-- On Windows the bridge finds SatDump's command line through PowerShell. This was tested only with a stand-in process on Linux, so check that the bridge's startup line says `(fc: SatDump, span: SatDump)`.
+- Built around SatDump v1.2.2's stats API.
+- The dashboard reads the fields `snr`, `peak_snr`, `freq`, `viterbi_ber`, `viterbi_lock`, `deframer_lock`, `rs_avg` and `fft_values`. Whichever is missing shows grey and the banner falls back to your SNR threshold.
 - The colour limits (frequency offset, BER, RS errors, C/N) are starting guesses. Tune them from what you see on a real lock.
 
 ## Acknowledgements
 
-Built on [SatDump](https://github.com/SatDump/SatDump). This project is not affiliated with or endorsed by SatDump, KMA or GK-2A operators.
-
-## License
-
-MIT. See [LICENSE](LICENSE).
+Built on [SatDump](https://github.com/SatDump/SatDump). 
