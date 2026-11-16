@@ -6,7 +6,7 @@ A browser dashboard for **aiming and monitoring a GK-2A LRIT ground station** ru
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/64257870-c756-4496-b3c1-4db0c9bf5113" />
 
 
-*Preview rendered with simulated SatDump stats. Searching state: <img width="2090" alt="image" src="https://github.com/user-attachments/assets/bf7d58ae-a678-4805-9576-5e5d2a21a848" />*
+*Preview rendered with simulated SatDump stats. Searching state: <img width="800" alt="image" src="https://github.com/user-attachments/assets/bf7d58ae-a678-4805-9576-5e5d2a21a848" />*
 
 ## Features
 
