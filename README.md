@@ -2,9 +2,11 @@
 
 A browser dashboard for **aiming and monitoring a GK-2A LRIT ground station** running [SatDump](https://github.com/SatDump/SatDump). It shows live signal quality, the SatDump receive chain, a spectrum and the latest decoded image, and its indicators turn **green as the satellite becomes decodable**, much like SatDump's own UI.
 
-![Locked state, rendered with simulated SatDump stats](docs/preview-locked.png)
 
-*Preview rendered with simulated SatDump stats. Searching state: <img width="2090" height="708" alt="image" src="https://github.com/user-attachments/assets/bf7d58ae-a678-4805-9576-5e5d2a21a848" />*
+<img width="1600" height="860" alt="image" src="https://github.com/user-attachments/assets/64257870-c756-4496-b3c1-4db0c9bf5113" />
+
+
+*Preview rendered with simulated SatDump stats. Searching state: <img width="3090" height="1708" alt="image" src="https://github.com/user-attachments/assets/bf7d58ae-a678-4805-9576-5e5d2a21a848" />*
 
 ## Features
 
