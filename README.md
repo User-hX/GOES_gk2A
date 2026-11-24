@@ -75,7 +75,7 @@ To stop, press Ctrl-C for the bridge and close SatDump. The frequency cannot be 
 
 - [docs/SETUP.md](docs/SETUP.md): setting everything up from scratch (hardware, SatDump, Python, first run, aiming).
 - [docs/CONFIGURATION.md](docs/CONFIGURATION.md): every bridge option, setup detection, endpoints.
-- [docs/DASHBOARD.md](docs/DASHBOARD.md): panels, colour rules, image behaviour, what each metric means.
+- [Dashboard/README.md](Dashboard/README.md): panels, colour rules, image behaviour, what each metric means.
 - [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md): common errors and fixes.
 
 ## Status and limitations
