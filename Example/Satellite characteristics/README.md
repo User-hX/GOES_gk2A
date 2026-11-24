@@ -18,8 +18,8 @@ Besides satellite images, a GK-2A LRIT capture carries extra data files that the
 4. **Korean time.** The maps show **KST** (UTC+9) beside UTC. The warning times are local Korean times, and the descriptions use Korean phrasing for the time of day, such as "late afternoon 15:00 to 18:00".
 5. **Korean geography.** The regional map is centred on Korea, the Yellow Sea and the East Sea.
 
-Timestamps in the file names are mostly UTC. For example `060940` is 06:09:40 UTC, which is 15:09:40 KST.
+Timestamps in the file names are most likely UTC. For example `060940` is 06:09:40 UTC, which is 15:09:40 KST.
 
 ## What this does and does not show
 
-This is strong evidence that your station is decoding GK-2A's LRIT broadcast, because the data inside it is KMA's own. The images are centred near GK-2A's longitude of about 128.2° East and with a clean frame sync and Reed-Solomon pass in the dashboard.
+This is strong evidence that the station is decoding GK-2A’s LRIT broadcast, because the data inside it is KMA’s owned. For further confirmation, we can check that the full-disk images are centred near GK-2A’s longitude of about 128.2° East, and that the dashboard shows a clean frame sync and Reed-Solomon pass during a run.
