@@ -15,7 +15,7 @@
 
 ## Averaging time and threshold
 
-On every poll (0.25 s by default) the dashboard applies an exponential moving average to the raw SNR, with the averaging time (default 1 s) as its time constant. With an averaging time above 1 s it also takes the median of the last 3 readings first, to remove single-reading spikes. A larger value is steadier but slower: a step change is about 63 percent reflected after one averaging time. Set it to 0.1 to 0.5 for a near-raw display.
+Every 0.5 s the dashboard takes the median of the last 5 raw SNR readings (to remove spikes), then applies an exponential moving average whose time constant is the averaging time (default 4 s). A larger value is steadier but slower. At 4 s a step change is about 63 percent reflected after 4 s. The smallest averaging time you can set is 0.5 s.
 
 The smoothed SNR drives the big SNR number, the history graph, the aim tone pitch, the SIGNAL FOUND stage, the SNR and BPSK status indication colours, and the lock decision only when SatDump reports no lock stats. It does not affect raw SNR, peak SNR, Δf, BER, RS, C/N or the lock flags, which are instantaneous. The spectrum has its own light, fixed smoothing, and its peak-hold line falls at a fixed rate in dB per second.
 
