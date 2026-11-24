@@ -46,7 +46,7 @@ There is nothing else to install. The bridge uses only the standard library.
 Either clone it:
 
 ```powershell
-git clone https://github.com/User-hX/gk2a-signal-console.git
+git clone https://github.com/User-hX/GOES_gk2A.git
 ```
 
 or download the ZIP from GitHub and unpack it. You need two files in the same folder: `gk2a_bridge.py` and `gk2a_live.html`.
@@ -114,7 +114,7 @@ By default the bridge only listens on the PC itself. To open the dashboard from 
 
 ## 12. Update the project
 
-Download the new files, or run `git pull` if you cloned it, and replace `gk2a_bridge.py` and `gk2a_live.html` together. Check [CHANGELOG.md](../CHANGELOG.md) for what changed.
+Download the new files, or run `git pull` if you cloned it, and replace `gk2a_bridge.py` and `gk2a_live.html` together if either is updated.
 
 ## 13. Checklist
 
