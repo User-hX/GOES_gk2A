@@ -10,14 +10,14 @@ A browser dashboard for **aiming and monitoring a GK-2A LRIT ground station** ru
 
 ## Features
 
-- **Live signal readout:** lightly smoothed SNR (about 1 s by default), peak SNR and a 60 s history graph with your threshold line.
+- **Live signal readout:** smoothed SNR (4 s average by default), peak SNR and a 60 s history graph with the threshold line.
 - **Receive chain:** BPSK demodulator, Viterbi, frame sync, Reed-Solomon and LRIT products, lighting up one stage at a time as the link comes together.
 - **Colour coding:** green means a metric is at a decodable level, amber means marginal, red means failed. Downstream stages stay grey until the stage before them is locked.
 - **Spectrum and link tiles:** live FFT with peak offset, plus Δf, BER, RS errors and C/N.
 - **Next-downlink countdown:** UTC-aligned, every 10 minutes by default.
 - **Decoded image panel:** shows the newest image, clears itself shortly before the next expected downlink, and has a CLEAR button.
 - **Aim tone (optional):** pitch follows SNR, with a chime on lock.
-- **Setup comes from SatDump:** the bridge reads your frequency and sample rate from the running SatDump command, so you type them once.
+- **Setup comes from SatDump:** the bridge reads the frequency and sample rate from the running SatDump command, so you type them once.
 - **No dependencies:** Python standard library only, one HTML file, no internet needed.
 
 ## How it works
@@ -25,7 +25,7 @@ A browser dashboard for **aiming and monitoring a GK-2A LRIT ground station** ru
 ```
 SDR -> SatDump (live gk2a_lrit)
          |-> stats API  http://127.0.0.1:8080/api
-         |-> decoded images in your output folder
+         |-> decoded images in the output folder
 gk2a_bridge.py (port 8000) reads the stats API and the image folder
 Browser -> http://127.0.0.1:8000
 ```
@@ -80,7 +80,7 @@ To stop, press Ctrl-C for the bridge and close SatDump. The frequency cannot be 
 ## Status and limitations
 
 - Built around SatDump v1.2.2's stats API.
-- The dashboard reads the fields `snr`, `peak_snr`, `freq`, `viterbi_ber`, `viterbi_lock`, `deframer_lock`, `rs_avg` and `fft_values`. Whichever is missing shows grey and the banner falls back to your SNR threshold.
+- The dashboard reads the fields `snr`, `peak_snr`, `freq`, `viterbi_ber`, `viterbi_lock`, `deframer_lock`, `rs_avg` and `fft_values`. Whichever is missing shows grey and the banner falls back to the preset SNR threshold.
 - The colour limits (frequency offset, BER, RS errors, C/N) are starting guesses. Tune them from what you see on a real lock.
 
 ## Acknowledgements
