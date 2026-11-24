@@ -42,8 +42,7 @@ Browser -> http://127.0.0.1:8000
 
 Starting from nothing? Follow [docs/SETUP.md](docs/SETUP.md) first.
 
-Put `gk2a_bridge.py` and `gk2a_live.html` in the same folder as `satdump.exe` (or give python the full path to the bridge), then run:
-
+The two files needed are in the repo’s [Dashboard](Dashboard) folder: gk2a_bridge.py and gk2a_live.html. Copy both into the same folder as satdump.exe, then run:
 ```powershell
 Start-Process .\satdump.exe -ArgumentList 'live gk2a_lrit C:\gk2a_out --source plutosdr --samplerate 2e6 --frequency 1692.1584e6 --gain 40 --gain_mode 1 --fft_enable --http_server 127.0.0.1:8080' -NoNewWindow; python gk2a_bridge.py --out C:\gk2a_out
 ```
