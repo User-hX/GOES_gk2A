@@ -46,7 +46,7 @@ There is nothing else to install. The bridge uses only the standard library.
 Either clone it:
 
 ```powershell
-git clone https://github.com/<your-username>/gk2a-signal-console.git
+git clone https://github.com/User-hX/gk2a-signal-console.git
 ```
 
 or download the ZIP from GitHub and unpack it. You need two files in the same folder: `gk2a_bridge.py` and `gk2a_live.html`.
