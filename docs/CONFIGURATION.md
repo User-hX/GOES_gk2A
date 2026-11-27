@@ -1,6 +1,6 @@
 # Configuration
 
-Everything is set on the `gk2a_bridge.py` command line. The bridge passes the values to the dashboard through `/config`, so `gk2a_live.html` needs no editing. Run `python gk2a_bridge.py --help` for the live list.
+Everything is set on the `gk2a_bridge.py` command line. The bridge passes the values to the dashboard through `/config`, so `gk2a_live.html` needs no editing. Run `python gk2a_bridge.py --help` for the full list.
 
 ## Bridge options
 
@@ -52,7 +52,7 @@ The dashboard polls `/stats` every 0.5 s, `/latest` every 2 s and `/config` ever
 
 ## Link status
 
-The pill in the header turns red NO LINK when the bridge cannot get a reply from SatDump's stats server within 1 second. If your SatDump replies slowly (large FFT replies, busy PC), the pill can flash red now and then even though SatDump is running. To check, time the reply with `curl.exe -s http://127.0.0.1:8080/api`.
+The pill in the header turns red NO LINK when the bridge cannot get a reply from SatDump's stats server within 1 second. If SatDump replies slowly (large FFT replies, busy PC), the pill can flash red now and then even though SatDump is running. To check, time the reply with `curl.exe -s http://127.0.0.1:8080/api`.
 
 ## Font size
 
