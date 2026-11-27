@@ -6,6 +6,7 @@ A browser dashboard for **aiming and monitoring a GK-2A LRIT ground station** ru
 <img width="800" alt="Dashboard in the locked state, all stages green" src="https://github.com/user-attachments/assets/64257870-c756-4496-b3c1-4db0c9bf5113" />
 
 <img width="800" alt="Dashboard in the searching state, no signal" src="https://github.com/user-attachments/assets/bf7d58ae-a678-4805-9576-5e5d2a21a848" />
+
 **Locked (top) and searching (bottom) states, rendered with simulated SatDump stats.**
 
 ## Features
