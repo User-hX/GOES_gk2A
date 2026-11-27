@@ -49,7 +49,7 @@ Each metric is coloured on its own. Green means that metric is at a decodable le
 | Reed-Solomon node | PASS | WEAK | red FAIL; grey "waiting for frame sync" before lock |
 | LRIT products node | RX while an image is shown | none | grey, waiting |
 
-The spectrum trace, its peak label and the THIS LOCK tile also turn green while locked. Peak SNR looks like a running maximum, so it stays green once seen.
+The spectrum trace, its peak label and the THIS LOCK tile also turn green while locked. Peak SNR appears to hold the highest reading seen, so it stays green once reached.
 
 Reed-Solomon is gated on frame sync because SatDump reports `0.0` errors before any data has reached that stage, which would otherwise read as a pass.
 
