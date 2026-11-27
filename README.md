@@ -5,8 +5,8 @@ A browser dashboard for **aiming and monitoring a GK-2A LRIT ground station** ru
 
 <img width="800" alt="Dashboard in the locked state, all stages green" src="https://github.com/user-attachments/assets/64257870-c756-4496-b3c1-4db0c9bf5113" />
 
-
-**Preview rendered with simulated SatDump stats. Searching state:** <img width="800" alt="Dashboard in the searching state, no signal" src="https://github.com/user-attachments/assets/bf7d58ae-a678-4805-9576-5e5d2a21a848" />
+<img width="800" alt="Dashboard in the searching state, no signal" src="https://github.com/user-attachments/assets/bf7d58ae-a678-4805-9576-5e5d2a21a848" />
+*Locked (top) and searching (bottom) states, rendered with simulated SatDump stats.*
 
 ## Features
 
@@ -30,7 +30,7 @@ gk2a_bridge.py (port 8000) reads the stats API and the image folder
 Browser -> http://127.0.0.1:8000
 ```
 
-`gk2a_bridge.py` is a small local web server. It serves the dashboard, passes SatDump's stats through, lists the newest image and tells the dashboard your setup values. See [docs/CONFIGURATION.md](docs/CONFIGURATION.md).
+`gk2a_bridge.py` is a small local web server. It serves the dashboard, passes SatDump's stats through, lists the newest image and tells the dashboard the inputted setup values. See [docs/CONFIGURATION.md](docs/CONFIGURATION.md).
 
 ## Requirements
 
