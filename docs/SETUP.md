@@ -19,7 +19,7 @@ Antenna and LNA choices are outside this project. Follow your hardware's own ins
 
 GK-2A is a geostationary satellite at about **128.2° East**, so it stays at a fixed spot in the sky. Use any satellite pointing calculator or app, enter your position and the satellite longitude, and it gives you the azimuth and elevation. Aim roughly first, then fine-tune using the dashboard (section 7).
 
-If your LNA is powered through the coax, make sure it is actually powered before you expect any signal. As far as I know a PlutoSDR does not supply bias power by itself, so you may need a separate bias-T or power injector. Check your SDR and LNA documentation.
+If your LNA is powered through the coax, make sure it is actually powered before you expect any signal. Check whether the SDR supplies bias power. A PlutoSDR may not, in which case a separate bias-T or type-c power injector is needed. Check the official SDR and LNA documentation.
 
 ## 3. Install SatDump
 
@@ -68,7 +68,7 @@ Start-Process .\satdump.exe -ArgumentList 'live gk2a_lrit C:\gk2a_out --source p
 
 Then open **http://127.0.0.1:8000** in your browser.
 
-An RTL-SDR example (from this project's original notes, check SatDump's documentation for your device):
+RTL-SDR example (check SatDump's documentation for the exact options for your device):
 
 ```
 satdump live gk2a_lrit gk2a_out --source rtlsdr --samplerate 1.024e6 --frequency 1692.14e6 --gain 40 --fft_enable --http_server 127.0.0.1:8080
